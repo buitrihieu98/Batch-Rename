@@ -150,21 +150,22 @@ namespace BatchRename
         }
 
         /// <summary>
-        /// Hàm thực hiện việc add method vừa được chọn từ combobox, hiện dialog để config, thực hiện khi bấm nút add
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void addMethodButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        /// <summary>
         /// Hàm thực hiện các method vào các file, folder để hiện ra new name cho người dùng xem trước, thực hiện khi bấm nút review
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void reviewButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Hàm thực hiện việc add method vừa được chọn từ combobox, hiện dialog để config, thực hiện khi bấm nút add
+        /// </summary>
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void prototypesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

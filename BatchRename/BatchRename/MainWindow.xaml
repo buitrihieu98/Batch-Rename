@@ -23,14 +23,13 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Methods" FontSize="30" Margin="0,0,20,0"/>
-                <ComboBox x:Name="prototypesComboBox"  Height="64" Width="238">
+                <ComboBox x:Name="prototypesComboBox" SelectionChanged="prototypesComboBox_SelectionChanged" Height="64" Width="292">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
                             <TextBlock Text="{Binding Name, Mode=OneWay}"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <Button Name="addMethodButton" FontSize="20" Width="50" Content="Add" Click="addMethodButton_Click"/>
             </StackPanel>
             <ListBox Name="operationsListBox" Height="586">
                 <ListBox.ItemTemplate>
