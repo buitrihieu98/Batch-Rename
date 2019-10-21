@@ -1,7 +1,6 @@
 D:\BatchRename\BatchRename\bin\Debug\BatchRename.exe.config
 D:\BatchRename\BatchRename\bin\Debug\BatchRename.exe
 D:\BatchRename\BatchRename\bin\Debug\BatchRename.pdb
-D:\BatchRename\BatchRename\obj\Debug\BatchRename.csprojResolveAssemblyReference.cache
 D:\BatchRename\BatchRename\obj\Debug\MainWindow.g.cs
 D:\BatchRename\BatchRename\obj\Debug\App.g.cs
 D:\BatchRename\BatchRename\obj\Debug\BatchRename_MarkupCompile.cache
@@ -12,3 +11,4 @@ D:\BatchRename\BatchRename\obj\Debug\BatchRename.Properties.Resources.resources
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.csproj.GenerateResource.Cache
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.exe
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.pdb
+D:\BatchRename\BatchRename\obj\Debug\BatchRename.csprojAssemblyReference.cache
