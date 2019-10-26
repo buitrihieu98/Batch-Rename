@@ -37,11 +37,29 @@ namespace BatchRename
         BindingList<File> listFiles = new BindingList<File>();
         //list chứa các folders cần đổi tên
         BindingList<Folder> listFolders = new BindingList<Folder>();
+        List<StringOperation> _prototypes = new List<StringOperation>();
+
+        BindingList<StringOperation> _actions = new BindingList<StringOperation>();
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            //add các loại prototype mà mình có
+            var prototype1 = new ReplaceOperation()
+            {
+                Args = new ReplaceArgs()
+                {
+                    From = "From",
+                    To = "To"
+                }
+            };
+            //add vào list prototypes
+            _prototypes.Add(prototype1);
+            //set source cho prototypesComboBox, filesListView, folderListView và operationListBox
+            prototypesComboBox.ItemsSource = _prototypes;
+            operationsListBox.ItemsSource = _actions;
             filesListView.ItemsSource = listFiles;
             foldersListView.ItemsSource = listFolders;
+
         }
 
         /// <summary>
@@ -146,7 +164,9 @@ namespace BatchRename
         /// <param name="e"></param>
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
+            var item = operationsListBox.SelectedItem as StringOperation;
 
+            item.Config();
         }
 
         /// <summary>
@@ -159,15 +179,42 @@ namespace BatchRename
 
         }
 
+   
+
         /// <summary>
-        /// Hàm thực hiện việc add method vừa được chọn từ combobox, hiện dialog để config, thực hiện khi bấm nút add
-        /// </summary>
+        /// Hàm xóa 1 action khỏi list actions, thực hiện khi người dùng bấm chuột phải vào 1 item trong list actions và chọn delete
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void prototypesComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void MenuDelItem_Click_1(object sender, RoutedEventArgs e)
         {
+            var action = operationsListBox.SelectedItem as StringOperation;
+            _actions.Remove(action);
+        }
 
+        /// <summary>
+        /// Hàm thực hiện việc enable nút add
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void prototypesComboBox_DropDownClosed(object sender, EventArgs e)
+        {
+            if (prototypesComboBox.SelectedItem != null)
+            {
+                addMethodButton.IsEnabled = true;
+            }
+            
+        }
+       
+        /// <summary>
+        /// Hàm thực hiện việc add method vừa được chọn từ combobox, hiện dialog để config
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addMethodButton_Click(object sender, RoutedEventArgs e)
+        {
+            var action = prototypesComboBox.SelectedItem as StringOperation;
+            _actions.Add(action.Clone());
         }
     }
 

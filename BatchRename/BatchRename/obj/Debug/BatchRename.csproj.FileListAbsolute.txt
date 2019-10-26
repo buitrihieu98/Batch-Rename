@@ -12,3 +12,6 @@ D:\BatchRename\BatchRename\obj\Debug\BatchRename.csproj.GenerateResource.Cache
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.exe
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.pdb
 D:\BatchRename\BatchRename\obj\Debug\BatchRename.csprojAssemblyReference.cache
+D:\BatchRename\BatchRename\obj\Debug\ReplaceConfigDialog.g.cs
+D:\BatchRename\BatchRename\obj\Debug\ReplaceConfigDialog.baml
+D:\BatchRename\BatchRename\obj\Debug\BatchRename.csproj.Fody.CopyLocal.cache

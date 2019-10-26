@@ -10,10 +10,10 @@
         <StackPanel Orientation="Vertical" Width="427">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Presets" FontSize="30" Margin="0,0,20,0"/>
-                <ComboBox Name="presetsComboBox" FontSize="20" Height="46" Width="160">
+                <ComboBox Name="presetsComboBox" FontSize="30" Height="46" Width="160">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name, Mode=OneWay}"/>
+                            <TextBlock Text="{Binding Name, Mode=OneWay}" FontSize="30"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
@@ -23,13 +23,14 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Methods" FontSize="30" Margin="0,0,20,0"/>
-                <ComboBox x:Name="prototypesComboBox" SelectionChanged="prototypesComboBox_SelectionChanged" Height="64" Width="292">
+                <ComboBox x:Name="prototypesComboBox" DropDownClosed="prototypesComboBox_DropDownClosed" Height="64" Width="229">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Name, Mode=OneWay}"/>
+                            <TextBlock Text="{Binding Name, Mode=OneWay}" FontSize="30"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
+                <Button Name="addMethodButton" Content="Add" Click="addMethodButton_Click" IsEnabled="False" FontSize="30"/>
             </StackPanel>
             <ListBox Name="operationsListBox" Height="586">
                 <ListBox.ItemTemplate>
@@ -38,10 +39,11 @@
                             <StackPanel.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Edit" Click="MenuItem_Click"/>
+                                    <MenuItem Header="Delete" Click="MenuDelItem_Click_1"/>
                                 </ContextMenu>
                             </StackPanel.ContextMenu>
-                            <TextBlock Text="{Binding Name}" Foreground="Red" FontWeight="Bold"/>
-                            <TextBlock Text="{Binding Description}" />
+                            <TextBlock Text="{Binding Name}" Foreground="Red" FontWeight="Bold" FontSize="20"/>
+                            <TextBlock Text="{Binding Description}"  FontSize="20"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
